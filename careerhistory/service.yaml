@@ -4,7 +4,7 @@ metadata:
   name: careerhistoryservice
 spec:
   selector:
-    app: careerhistoryhrmoraclepod
+    app: careerhistoryhrmoracle
   ports:
   - port: 8080
     targetPort: 8080
