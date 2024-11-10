@@ -1,0 +1,9 @@
+FROM eclipse-eclipse-temurin
+
+WORKDIR /sp/app
+
+COPY UnifiedHRMS.jar app.jar
+
+EXPOSE 8459
+
+CMD [ "java","-jar","app.jar" ]
