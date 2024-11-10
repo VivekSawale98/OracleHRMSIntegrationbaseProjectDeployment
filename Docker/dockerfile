@@ -2,7 +2,7 @@ FROM eclipse-temurin
 
 WORKDIR /sp/app
 
-COPY UnifiedHRMS.jar app.jar
+COPY -L -o UnifiedHRMS.jar https://drive.google.com/file/d/1lY-ANcnWqySVEiTnQunONrsTFdJo5-i0/view?usp=sharing
 
 EXPOSE 8459
 
