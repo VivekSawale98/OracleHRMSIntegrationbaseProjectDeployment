@@ -9,7 +9,7 @@ spec:
   template:
     metadata:
       labels:
-        app: careerhistoryhrmoraclepod
+        app: careerhistoryhrmoracle
     spec:
       containers:
       - name: careerhistoryhrmoraclecontain
