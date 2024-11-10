@@ -3,6 +3,7 @@ FROM eclipse-temurin
 WORKDIR /sp/app
 
 # Setting Copy
+# Path to Local
 COPY ./UnifiedHRMS.jar app.jar
 
 EXPOSE 8459
