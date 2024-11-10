@@ -1,12 +1,16 @@
 FROM eclipse-temurin
 
+
+# Set the timezone to UTC or any other desired timezone
+ENV TZ=UTC
+RUN apt-get update && apt-get install -y tzdata && \
+    ln -fs /usr/share/zoneinfo/UTC /etc/localtime && \
+    dpkg-reconfigure --frontend noninteractive tzdata
+
 WORKDIR /sp/app
 
-# Setting Copy
-# Path to Local
-
-COPY ./UnifiedHRMS.jar app.jar
+COPY UnifiedHRMS.jar app.jar
 
 EXPOSE 8459
 
-CMD ["java", "-jar", "UnifiedHRMS.jar"]
+CMD [ "java","-jar","app.jar" ]
