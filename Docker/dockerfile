@@ -2,8 +2,12 @@ FROM eclipse-temurin
 
 WORKDIR /sp/app
 
-COPY -L -o UnifiedHRMS.jar https://drive.google.com/uc?export=download&id=1lY-ANcnWqySVEiTnQunONrsTFdJo5-i0
+# Install python and gdown
+RUN apt-get update && apt-get install -y python3 python3-pip && pip3 install gdown
+
+# Download the file using gdown
+RUN gdown "https://drive.google.com/uc?export=download&id=1lY-ANcnWqySVEiTnQunONrsTFdJo5-i0" -O UnifiedHRMS.jar
 
 EXPOSE 8459
 
-CMD [ "java","-jar","app.jar" ]
+CMD ["java", "-jar", "UnifiedHRMS.jar"]
