@@ -1,4 +1,4 @@
-FROM eclipse-eclipse-temurin
+FROM eclipse-temurin
 
 WORKDIR /sp/app
 
