@@ -1,0 +1,7 @@
+FROM eclipse-temurin
+
+COPY careerhistory.jar app.jar
+
+EXPOSE 8080
+
+CMD [ "jave","-jar","app.jar" ]

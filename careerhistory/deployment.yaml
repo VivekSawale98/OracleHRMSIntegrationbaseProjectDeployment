@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: careerhistory
+spec:
+  selector:
+    matchLabels:
+      app: careerhistoryhrmoracle
+  template:
+    metadata:
+      labels:
+        app: careerhistoryhrmoraclepod
+    spec:
+      containers:
+      - name: careerhistoryhrmoraclecontain
+        image: careerhistoryhrmoracle:viveksawale
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: careerhistoryvol
+          mountPath: /h2data
+      volumes:
+      - name: careerhistoryvol
+        persistentVolumeClaim:
+          claimName: pvccareerhistory
