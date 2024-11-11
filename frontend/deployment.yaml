@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: oraclehrmsintfrontend
+spec:
+ replicas: 2
+ selector:
+  matchLabels:
+   app: oraclehrmsintfrontendapp
+ template:
+  metadata:
+   labels:
+    app: oraclehrmsintfrontendapp
+  spec:
+   containers:
+    - name: oraclehrmsintfrontendappcontainer
+      image: oraclehrmsintfrontend:viveksawale
+      imagePullPolicy: Never
+      ports:
+       - containerPort: 80
+    
