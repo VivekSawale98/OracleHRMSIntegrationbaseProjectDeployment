@@ -1,0 +1,7 @@
+FROM eclipse-temurin
+
+COPY breakstatement.jar app.jar
+
+EXPOSE 8460
+
+CMD ["java","-jar","app.jar"]

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: breakstatementappdeployment
+spec:
+  selector:
+    matchLabels:
+      app: breakstatmenthrmsoracleapp
+  template:
+    metadata:
+      labels:
+        app: breakstatmenthrmsoracleapp
+    spec:
+      containers:
+      - name: breakstatmenthrmsoraclecontainer
+        image: breakstatementfunctionality:viveksawale
+        ports:
+        - containerPort: 8460
+        volumeMounts:
+        - name: breaksatmentvol
+          mountPath: /database
+      volumes:
+        - name: breaksatmentvol
+          persistentVolumeClaim:
+           claimName: breakstatementhrmsoracleapppvc
